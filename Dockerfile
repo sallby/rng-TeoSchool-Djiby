@@ -1,6 +1,6 @@
 FROM python:alpine
-COPY requirements.txt .
+WORKDIR /app
+COPY requirements.txt rng.py ./
 RUN pip install --no-cache-dir -r requirements.txt
-COPY rng.py /
 CMD ["python", "rng.py"]
 EXPOSE 80
